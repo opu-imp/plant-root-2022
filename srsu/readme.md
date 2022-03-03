@@ -8,15 +8,26 @@ https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet
     > docker pull t12nakatani/srsu_nakatani:latest
 
 
-## Compute and print U-Net test set metrics
-    > cd ./src
-    > python ./unet/test.py
+## 使用した時のコマンド
+    > cd */plant-root/srsu/src_
+    > python3 ./unet/test_resized.py
 
+## 詳細:
 
-## Compute Frangi test set metrics
-    > cd ./src
-    > python ./frangi/test.py
+入力画像の指定はunet/test.pyの次の部分でokで行う．
 
+```
+def process_test_set(checkpoint_path):
+    segment_dir_with_unet(
+        checkpoint_path,
+        '../seed-pack2_resized', #入力
+        '../output/seed_pack2_resized_seg' #出力
+    )
+    print_metrics_from_dirs(
+        '../data/test/annotations', # 使わない
+        '../output/seed_pack2_seg' # 使わない
+    )
+```
 
-​        
-## Note:
+ネットワークのパラメータは，著者が紹介しているものに対し画像11枚でfine-tuiningしたものを用いた．
+
