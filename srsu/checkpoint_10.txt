@@ -1,0 +1,17 @@
+Date: 2021-10-07 01:53:31.071851
+Epoch: 10
+Batch set size: 2
+Training data size: 437
+Train Duration: 633.7 seconds
+Validation accuracy: 0.9956122009632943
+Validation TN: 26152839
+Validation FP: 73358
+Validation FN: 42900
+Validation TP: 226647
+Validation precision: 0.7554774087098548
+Validation recall: 0.8408440828501152
+Validation f1_score: 0.7958781638902154
+Validation iou: 0.6609614907919102
+Validation true_mean: 0.010173218762983218
+Validation pred_mean: 0.011322761874510865
+Validation loss: 0.18377188903749894
