@@ -1,30 +1,7 @@
-Code for the paper "Segmentation of Roots in Soil with U-Net"
+根箱やシードパックを撮影した画像から根の検出を行った．
 
-Data is available from https://zenodo.org/record/3527713
+画像ごとにカメラの位置，画角，被写体との距離が異なるため，×印の位置をもとに射影変換により位置合わせを行った．
 
-Trained model is available from https://zenodo.org/record/3484015
-
-
-
-## Install dependencies
-    > pip install -r requirements.txt
+![138-P-1_211124](https://user-images.githubusercontent.com/51512765/156523396-3497deec-07c6-449a-b543-686be297dc40.png)
 
 
-## Compute and print U-Net test set metrics
-    > cd ./src
-    > python ./unet/test.py
-
-
-## Compute Frangi test set metrics
-    > cd ./src
-    > python ./frangi/test.py
-    
-        
-## Note:
-I'm currently recommending the newer RootPainter software for new segmentation projects:
-
-Paper available on bioarxiv: https://www.biorxiv.org/content/10.1101/2020.04.16.044461v2
-
-Paper avilable on researchgate: https://www.researchgate.net/publication/340765796_RootPainter_Deep_Learning_Segmentation_of_Biological_Images_with_Corrective_Annotation
-
-Code and software available on github: https://github.com/Abe404/root_painter

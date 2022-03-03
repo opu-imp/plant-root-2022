@@ -29,5 +29,4 @@ def process_test_set(checkpoint_path):
     )
 ```
 
-ネットワークのパラメータは，著者が紹介しているものに対し画像11枚でfine-tuiningしたものを用いた．
-
+ネットワークのパラメータは，著者が紹介しているものに対し画像11枚でfine-tuningしたものを用いた．fine-tuningの結果はsrsu/checkpoint_10.txt
