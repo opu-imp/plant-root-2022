@@ -24,3 +24,13 @@
 * pynb/caption.ipynb(差分の描画に用いた画像右上のキャプションの作成)
 
 ![138-P-1_211129](https://user-images.githubusercontent.com/51512765/156688297-9decb6a6-71da-4781-8c18-63b5bcc51ede.png)
+
+
+
+## projection profile
+
+画像中のどの部分が活発に成長しているかを調べるため，差分画像に対しprjection profileを計算
+
+* pynb/prjection profile.ipynb
+
+![horizontal_138-P-1](https://user-images.githubusercontent.com/51512765/156716313-8a2dee7d-7876-4ee2-b70f-51a53c5de099.png)
