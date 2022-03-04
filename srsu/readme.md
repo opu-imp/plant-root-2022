@@ -14,7 +14,7 @@ https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet
 
 ## 詳細:
 
-入力画像の指定はunet/test.pyの次の部分でokで行う．
+入力画像の指定はunet/test.pyの次の部分で行う．
 
 ```
 def process_test_set(checkpoint_path):
