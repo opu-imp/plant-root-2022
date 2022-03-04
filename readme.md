@@ -2,7 +2,7 @@
 
 根箱やシードパックを撮影した画像から根のセグメンテーションを行った．解析対象の画像は，成長観察のためにいくつかの個体を数回に渡り撮影したもの 
 
-* srsu
+* srsu/src_/unet/test_resized.py  
   ![138-P-1_211124](https://user-images.githubusercontent.com/51512765/156523396-3497deec-07c6-449a-b543-686be297dc40.png)
 
 
@@ -15,7 +15,7 @@
 
 位置合わせをした後もわずかにズレが残るため，画像処理(膨張・縮小・閾値処理等)によりそれらを軽減した
 
-* remove_noise_from_transformed.ipynb
+* pynb/remove_noise_from_transformed.ipynb
 
 ## 差分抽出・描画
 
