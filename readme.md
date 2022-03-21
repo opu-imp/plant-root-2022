@@ -39,3 +39,4 @@
 
 ## [参考文献](https://github.com/t-nakatani/plant-root/blob/main/paper.md)
 
+[plant-root.bib](https://github.com/t-nakatani/plant-root/blob/main/plant-root.bib)
