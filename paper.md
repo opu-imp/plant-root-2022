@@ -28,13 +28,15 @@
 
 * **Segmentation of Roots in Soil with U-Net** 
 
-  Smith, A.G., Petersen, J., Selvan, R. *et al.* Segmentation of roots in soil with U-Net. *Plant Methods* 16, 13 (2020). [(github)](https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet)
+  Smith, A.G., Petersen, J., Selvan, R. *et al.* Segmentation of roots in soil with U-Net. *Plant Methods* **16**, 13 (2020). [(github)](https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet)
 
   <img width="985" alt="srsu_fig7" src="https://user-images.githubusercontent.com/51512765/159189557-3af608b5-b817-411b-89dd-14a9a74b44c1.png">
 
   根の分析方法の一つである線分交差法を行うために，セグメンテーションを扱っている論文．
 
-  チコリ(Cichorium intybus L.)の根を対象とした[U-Net](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_28)の有効性を独自データセットで検証．独自データセットはピクセルレベルでアノーテーションされたチコリの根の画像48枚(train:29枚, val:9枚, test:10枚)で構成される．評価実験により，手動による線分交差法を自動セグメンテーションで置き換えることが可能であることを示した．(手動アノーテーションと自動セグメンテーション結果のF1値は0.7となった．)
+  チコリ(Cichorium intybus L.)の根を対象とした[U-Net](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_28)の有効性を独自データセットで検証．独自データセットはピクセルレベルでアノーテーションされたチコリの根の画像48枚(train:29枚, val:9枚, test:10枚)で構成される．上図のように，土の中で生育中の根をアクリルガラス越しに撮影した画像を扱っている．
+
+  評価実験により，手動による線分交差法を自動セグメンテーションで置き換えることが可能であることを示した．(手動アノーテーションと自動セグメンテーション結果のF1値は0.7となった．)
 
   <!-- U-Netの元実装に合わせて，画像を小さな領域に分割し，その小領域に対しセグメンテーションを行う．その際，下図のように出力の領域(青:572x572)よりも大きな領域(緑:388x388)を入力とし領域の端の部分の周辺情報を確保している．
 
@@ -42,7 +44,17 @@
 
   -->
 
-  
+  <br><br>
+
+* **Computer vision and machine learning enabled soybean root phenotyping pipeline** 
+
+  Falk, K.G., Jubery, T., Mirnezami, S. *et al.* Computer vision and machine learning enabled soybean root phenotyping pipeline. *Plant Methods* **16,** 5 (2020).
+
+  <img width="1175" alt="aria_fig3" src="https://user-images.githubusercontent.com/51512765/159190145-694be95e-93aa-4cd5-abfd-99356c14bf96.png">
+
+  根を対象としたフェノタイピングのプラットフォームを提案．提供している処理の一つにセグメンテーションがある．対象とする画像は青い発芽紙の上にある根をアクリル板等なしで撮影したもの．
+
+  ネットワークには畳み込み自動エンコーダが採用されている．[実装](https://bitbucket.org/baskargroup/aria2/src/master/)はMATLAB．
 
   
 
