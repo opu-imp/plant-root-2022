@@ -36,3 +36,6 @@
 * pynb/prjection profile.ipynb
 
 ![horizontal_138-P-1](https://user-images.githubusercontent.com/51512765/156716313-8a2dee7d-7876-4ee2-b70f-51a53c5de099.png)
+
+## [参考文献](https://github.com/t-nakatani/plant-root/blob/main/paper.md)
+
