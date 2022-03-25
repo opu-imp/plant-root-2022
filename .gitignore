@@ -1,2 +1,3 @@
 *.pkl
 for_Gdrive/*
+*.ipynb_checkpoints
