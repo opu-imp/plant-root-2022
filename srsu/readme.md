@@ -5,7 +5,7 @@
 
 ## 事前準備
 * ネットワークのパラメータ[checkpoint_10.pkl](https://drive.google.com/file/d/1fm4DYDOPmbt3ec7IVtd0_zqnHoiFXI6_/view?usp=sharing)を`srsu`の直下に配置する
-* 入力画像[sed_pack2_resized](https://drive.google.com/drive/folders/1xGZAnCrbeDCEjXytR7PmIMPBmYiGS3sN?usp=sharing)から数枚選んで`srsu/input/seed-pack2_resized`の直下に配置する
+* 入力画像[seed_pack2_resized](https://drive.google.com/drive/folders/1xGZAnCrbeDCEjXytR7PmIMPBmYiGS3sN?usp=sharing)から数枚選んで`srsu/input/seed-pack2_resized`の直下に配置する
 
 
 ## Dockerを用いた実行環境
