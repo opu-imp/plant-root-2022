@@ -1,6 +1,6 @@
-FROM python:3.6.9
+FROM pytorch/pytorch:1.0.1-cuda10.0-cudnn7-runtime
 
 COPY requirements.txt .
-RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
+
 WORKDIR /work
