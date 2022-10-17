@@ -2,3 +2,4 @@
 *.pkl
 for_Gdrive/*
 **.ipynb_checkpoints
+**.DS_Store
