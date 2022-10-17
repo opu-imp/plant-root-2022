@@ -1,39 +1,43 @@
-"Segmentation of Roots in Soil with U-Net"の著者実装を一部改変して使用
+# セグメンテーション
+"Segmentation of Roots in Soil with U-Net"の[著者実装](https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet)を一部改変
 
-https://github.com/Abe404/segmentation_of_roots_in_soil_with_unet
+
 
 ## 事前準備
-ネットワークのパラメータファイル[checkpoint_10.pkl](https://drive.google.com/file/d/1fm4DYDOPmbt3ec7IVtd0_zqnHoiFXI6_/view?usp=sharing)をsrsuの直下に配置する
+* ネットワークのパラメータ[checkpoint_10.pkl](https://drive.google.com/file/d/1fm4DYDOPmbt3ec7IVtd0_zqnHoiFXI6_/view?usp=sharing)を`srsu`の直下に配置する
+* 入力画像[sed_pack2_resized](https://drive.google.com/drive/folders/1xGZAnCrbeDCEjXytR7PmIMPBmYiGS3sN?usp=sharing)から数枚選んで`srsu/input/seed-pack2_resized`の直下に配置する
 
 
-
-## Docker環境
+## Dockerを用いた実行環境
+* GPU利用(推奨)
 ```sh
-docker pull t12nakatani/srsu_nakatani:latest
+docker build -t srsu_seg:gpu .
+docker run --gpus all --rm -it -v /disk023/usrs/USERNAME/PATH_TO_DIR:/work srsu_seg:gpu /bin/bash
+```
+* CPU利用
+```sh
+docker build -t srsu_seg:cpu -f Dockerfile_cpu .
+docker run --rm -it -v /disk023/usrs/USERNAME/PATH_TO_DIR:/work srsu_seg:cpu /bin/bash
 ```
 
 
-## 使用した時のコマンド
+## 使用するコマンド
 ```
-cd ./srsu/src
-python3 ./unet/test_resized.py
+cd srsu/src
+python ./unet/test.py
 ```
 
-## 詳細:
+## その他:
 
-入力画像の指定はunet/test.pyの次の部分で行う．
+* 入力画像の指定はunet/test.pyの次の部分で行う．
 
 ```py
 def process_test_set(checkpoint_path):
     segment_dir_with_unet(
         checkpoint_path,
-        '../seed-pack2_resized', #入力ディレクトリ
+        '../input/seed-pack2_resized', #入力ディレクトリ
         '../output/seed_pack2_resized_seg' #出力ディレクトリ
-    )
-    print_metrics_from_dirs(
-        '../data/test/annotations', # 使わない
-        '../output/seed_pack2_seg' # 使わない
     )
 ```
 
-ネットワークのパラメータは，著者が紹介しているものに対し画像11枚でfine-tuningしたものを用いた．fine-tuningの際のログははsrsu/checkpoint_10_log.txt
+* ネットワークのパラメータは，著者が公開しているパラメータに対し画像11枚でfine-tuningしたものを用いた．fine-tuningの際のログは`srsu/checkpoint_10_log.txt`に保存している．

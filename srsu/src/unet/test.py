@@ -207,12 +207,8 @@ def process_2016_grid_counted(checkpoint_path):
 def process_test_set(checkpoint_path):
     segment_dir_with_unet(
         checkpoint_path,
-        '../seed-pack2_png',
-        '../output/seed_pack2_seg'
-    )
-    print_metrics_from_dirs(
-        '../data/test/annotations',
-        '../output/seed_pack2_seg'
+        '../input/seed-pack2_resized',
+        '../output/seed_pack2_resized_seg'
     )
 
 
