@@ -29,6 +29,8 @@ python ./unet/test.py
 
 ## その他:
 
+* fine-tuningについては、`srsu/finetune.md`に記載
+
 * 入力画像の指定はunet/test.pyの次の部分で行う．
 
 ```py

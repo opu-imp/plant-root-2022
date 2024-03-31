@@ -48,7 +48,7 @@ def get_data_loaders():
     val_photos, train_photos, val_annotations, train_annotations = files
     train_set = UNetTrainDataset(train_annotations, train_photos)
     val_set = UNetValDataset(val_annotations, val_photos)
-    train_loader = DataLoader(train_set, batch_size=4, shuffle=True,
+    train_loader = DataLoader(train_set, batch_size=2, shuffle=True,
                               num_workers=8, drop_last=False, pin_memory=True)
     val_loader = DataLoader(val_set, batch_size=8, drop_last=False,
                             pin_memory=True, shuffle=False, num_workers=8)
@@ -111,9 +111,11 @@ def evaluate(cnn, loader):
 
 def train_unet(outdir):
     train_loader, val_loader = get_data_loaders()
-    epochs = 80
-    # cnn = UNetGN()
-    cnn = pickle.load('../../saved_output/unet/checkpoint_73.pkl')
+    epochs = 10
+    cnn = UNetGN()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    checkpoint_path = '../saved_output/unet/checkpoint_73.pkl'
+    cnn.load_state_dict(torch.load(checkpoint_path, map_location=device))
 
     # To use multiple GPUs
     # cnn = torch.nn.DataParallel(cnn, device_ids=[0, 1])
