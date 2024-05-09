@@ -65,7 +65,7 @@ def load_train_data():
     train_photos = load_images_pool(train_photo_paths)
     return train_photos, train_annotations
 
-
+#データを読み込む関数
 def get_files_split():
     cur_dir = os.path.dirname(os.path.realpath(__file__))
     train_data_dir = os.path.join(cur_dir, '..', 'data', 'train')

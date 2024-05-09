@@ -25,7 +25,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import torch.nn as nn
 import torch
 
-
+#ダウンサンプリング(入力画像の縮小)
 class DownBlock(nn.Module):
     def __init__(self, in_channels):
         super().__init__()
@@ -48,7 +48,7 @@ class DownBlock(nn.Module):
         out = self.conv2(out)
         return out
 
-
+#画像サイズの調整
 def crop_tensor(tensor, target):
     """ Crop tensor to target size """
     _, _, tensor_height, tensor_width = tensor.size()
@@ -60,7 +60,7 @@ def crop_tensor(tensor, target):
     cropped_tensor = tensor[:, :, top: bottom, left: right]
     return cropped_tensor
 
-
+#アップサンプリング(入力画像の拡大)
 class UpBlock(nn.Module):
     def __init__(self, in_channels):
         super().__init__()
@@ -98,7 +98,7 @@ class UpBlock(nn.Module):
         out = self.conv3(out)
         return out
 
-
+#UNet本体
 class UNetGN(nn.Module):
     def __init__(self, im_channels=3):
         super().__init__()

@@ -37,7 +37,7 @@ sys.path.append('.')
 from metrics import get_metrics, get_metrics_str
 from data_utils import get_files_split
 
-
+#データローダー
 def get_data_loaders():
     """
     Load the train and validation photo and annotation paths.
